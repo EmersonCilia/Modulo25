@@ -4,18 +4,19 @@ package br.com.emerson.services.generics;
 import java.io.Serializable;
 import java.util.Collection;
 
+import br.com.emerson.dao.IClienteDAO;
 import br.com.emerson.dao.Persistente;
 import br.com.emerson.dao.generics.IGenericDAO;
 import br.com.emerson.exceptions.TipoChaveNaoEncontradaException;
 
 
 public abstract class GenericService<T extends Persistente, E extends Serializable>
-	implements IGenericService<T, E> {
-	
-	protected IGenericDAO<T,E> dao;
-	
-	public GenericService(IGenericDAO<T,E> dao) {
-		this.dao = dao;
+		implements IGenericService<T, E> {
+
+	protected IGenericDAO<T, E> dao;
+
+	public GenericService(IClienteDAO dao) {
+		this.dao = (IGenericDAO<T, E>) dao;
 	}
 
 	@Override
@@ -42,5 +43,4 @@ public abstract class GenericService<T extends Persistente, E extends Serializab
 	public Collection<T> buscarTodos() {
 		return this.dao.buscarTodos();
 	}
-
 }

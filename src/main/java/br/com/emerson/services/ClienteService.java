@@ -5,8 +5,7 @@ import br.com.emerson.dao.IClienteDAO;
 import br.com.emerson.exceptions.TipoChaveNaoEncontradaException;
 import br.com.emerson.services.generics.GenericService;
 
-public class ClienteService extends GenericService implements IClienteService {
-
+public class ClienteService extends GenericService<Cliente, Long> implements IClienteService {
 
     public ClienteService(IClienteDAO clienteDAO){
         super(clienteDAO);

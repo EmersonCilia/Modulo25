@@ -5,9 +5,6 @@ import br.com.emerson.dao.generics.GenericDAO;
 
 public class ClienteDAO extends GenericDAO<Cliente> implements IClienteDAO {
 
-        public ClienteDAO(){
-            super();
-        }
 
     @Override
     public Class<Cliente> getTipoClasse() {
